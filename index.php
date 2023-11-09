@@ -27,5 +27,8 @@
 			<input id="submit" type="submit" name="submit" value="Отправить"><span></span>
 		</p>
 	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	
 </body>
 </html>
