@@ -2,9 +2,49 @@
 
 if( $_POST ) {
 
-	require 'phpmailer/PHPMailerAutoload.php';
+	require 'PHPMailer/PHPMailer.php';
 
-	die;
+// require 'PHPMailer/src/Exception.php';
+// require 'PHPMailer/src/PHPMailer.php';
+// require 'PHPMailer/src/SMTP.php';
+
+$mail = new PHPMailer;
+
+$mail->isSMTP();
+$mail->Host = 'smtp.mail.ru';
+$mail->SMTPAuth = true;
+$mail->Username = 'smtp_assist@mail.ru';
+$mail->Password = 'MQumct8jdD8mAkuywnfa';
+$mail->SMTPSecure = 'ssl';
+$mail->Port = '465';
+
+$mail->CharSet = 'UTF-8';
+$mail->From = 'smtp_assist@mail.ru';
+$mail->FromName = 'Limonero';
+//$mail->addAddress('dinavl@bk.ru', 'Form');
+
+$mail->isHTML(true);
+
+$mail->Subject = $_POST['subject'];
+$mail->Body = "Имя: {$_POST['name']}<br> Email: {$_POST['email']}<br> Сообщение: {$_POST['body']}";
+$mail->AltBody =  "Имя: {$_POST['name']}\r\n Email: {$_POST['email']}\r\n Сообщение: {$_POST['body']}";
+//$mail->SMTPDebug = 1;
+
+// if ($mail->send()) {
+// 	echo 'Письмо отправлено!';
+//   } else {
+// 	echo 'Ошибка: ' . $mail->ErrorInfo;
+//   } 
+
+if( $mail->send() ){
+	$answer = '1';
+} else {
+	$answer = '0';
+	// echo 'Письмо не может быть отправлено. ';
+	// echo 'Ошибка: ' . $mail->ErrorInfo;
+}
+
+	die( $answer );
 }
 ?>
 
