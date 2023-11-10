@@ -1,3 +1,13 @@
+<?php
+
+if( $_POST ) {
+
+	require 'phpmailer/PHPMailerAutoload.php';
+
+	die;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,7 +16,7 @@
 	<title>Contact Form</title>
 </head>
 <body>
-	<form action="" method="POST" id="contect">
+	<form action="" method="POST" id="contact">
 		<p>
 			<label for="name">Имя</label>
 			<input type="text" name="name" id="name"><span></span>
@@ -29,6 +39,38 @@
 	</form>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	
+	<script>
+		$(function() {
+			$('#contact').submit(function() {
+				//валидация полей
+				let errors = false;
+				$(this).find('span').empty();
+
+				$(this).find('input, textarea').each(function() {
+					if($.trim($(this).val() ) == '') {
+						errors = true;
+						$(this).next().text( 'Не заполнено поле ' + $(this).prev().text() );
+					}
+				});
+
+				if(!errors) {
+					let data = $('#contact').serialize();
+					$.ajax ({
+						url: 'index.php',
+						type: 'POST',
+						data: data,
+						success: function(res) {
+
+						},
+						error: function() {
+							alert ('Ошибка!');
+						}
+ 					});
+				}
+				return false;
+
+			});
+		});
+	</script>
 </body>
 </html>
