@@ -17,6 +17,7 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
     // создаем объект новый
     let data = new FormData(form);
+	console.log(`Значение переменной ${data}`);
     // передаем в фукцию fetch данные и получаем результат
     postData('send.php', data).then((data) => {
         // обработка ответа от сервера
