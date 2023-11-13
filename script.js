@@ -1,12 +1,14 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-// Функция отправки формы fetch
+// // Функция отправки формы fetch
+
 async function postData(url= '', data = {}) {
     const response = await fetch(url, {
         method: "POST",
-        body: data
+        body: data,
     });
     let result = await response.json();
+	console.log(`Значение result ${result}`);
 	return result;
 
 }
@@ -21,20 +23,20 @@ form.addEventListener('submit', function (event) {
     // создаем объект новый
     const data = new FormData(form);
 	console.log(`Значение переменной ${data}`);
-    // передаем в фукцию fetch данные и получаем результат
-    // postData('send.php', data).then((data) => {
-    //     // обработка ответа от сервера
-    //     console.log(data);
-    //     if (data.error == '') {
-    //         alert(data.success);
-    //         cleanForm();
-    //     } else if (data.email !== '') {
-    //         alert(data.email);
-    //     } else {
-    //         alert(data.error);
-    //     }
-    // })
-	postData('send.php', data);
+    //передаем в фукцию fetch данные и получаем результат
+    postData('send.php', data).then((data) => {
+        // обработка ответа от сервера
+        console.log(data);
+        if (data.error == '') {
+            alert(data.success);
+            cleanForm();
+        } else if (data.email !== '') {
+            alert(data.email);
+        } else {
+            alert(data.error);
+        }
+    })
+	//postData('send.php', data);
 })
 
 });
