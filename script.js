@@ -6,7 +6,8 @@ async function postData(url= '', data = {}) {
         method: "POST",
         body: data
     });
-    return await  response.json();
+    let result = await response.json();
+	return result;
 
 }
 
