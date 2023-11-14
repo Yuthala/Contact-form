@@ -13,7 +13,7 @@ async function postData(url= '', data = {}) {
 			body: JSON.stringify(data)
 		});
 		return await response.json();
-	});
+	}
 
 // function postData(url= '', data ={}) {
 // 	return new Promise(resolve => {
