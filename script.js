@@ -3,15 +3,26 @@ window.addEventListener('DOMContentLoaded', function() {
 // // Функция отправки формы fetch
 
 async function postData(url= '', data = {}) {
-    const response = await fetch(url, {
-        method: "POST",
-        body: data,
-    });
-    let result = await response.json();
-	console.log(`Значение result ${result}`);
-	return result;
+		const response = await fetch(url, {
+			method: "POST",
+			body: data,
+			headers: {
+				"Content-Type": "application/json",
+				// 'Content-Type': 'application/x-www-form-urlencoded',
+			  },
+			body: JSON.stringify(data)
+		});
+		return await response.json();
+	});
 
-}
+// function postData(url= '', data ={}) {
+// 	return new Promise(resolve => {
+// 		return fetch ('url')
+// 			.then(response => response.json())
+// 			.then(data => resolve(data));
+// 	})
+// 	.catch(error => console.log(error));
+// }
 
 // отправка
 let form = document.getElementById('contact'); // переменная с формой
@@ -37,6 +48,7 @@ form.addEventListener('submit', function (event) {
         }
     })
 	//postData('send.php', data);
-})
+});
 
 });
+
