@@ -47,7 +47,7 @@ button {
 </head>
 <body>
 
-<div class="form-block">
+<!-- <div class="form-block">
     <h1>Форма связи</h1>
     <form id="form">
         <input class="clean" type="text" name="name" placeholder="Имя">
@@ -55,8 +55,8 @@ button {
         <textarea class="clean" rows="3" name="text" placeholder="Текст сообщения"></textarea>
         <button name="send" type="submit">Отправить</button>
     </form>
-</div>
-	<!-- <form action="" method="POST" id="contact">
+</div> -->
+	<form action="" method="POST" id="form">
 		<p>
 			<label for="name">Имя</label>
 			<input type="text" name="name" id="name"><span></span>
@@ -76,7 +76,7 @@ button {
 		<p>
 			<input id="submit" type="submit" name="submit" value="Отправить"><span></span>
 		</p>
-	</form> -->
+	</form>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src='script.js'></script>
