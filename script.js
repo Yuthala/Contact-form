@@ -2,18 +2,25 @@ window.addEventListener('DOMContentLoaded', function() {
 
 // // Функция отправки формы fetch
 
-async function postData(url= '', data = {}) {
-		const response = await fetch(url, {
-			method: "POST",
-			body: data,
-			headers: {
-				"Content-Type": "application/json",
-				// 'Content-Type': 'application/x-www-form-urlencoded',
-			  },
-			body: JSON.stringify(data)
-		});
-		return await response.json();
-	}
+const response = await fetch(url, {
+    method: "POST",
+    body: data
+});
+
+
+
+// async function postData(url= '', data = {}) {
+// 		const response = await fetch(url, {
+// 			method: "POST",
+// 			body: data,
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 				// 'Content-Type': 'application/x-www-form-urlencoded',
+// 			  },
+// 			body: JSON.stringify(data)
+// 		});
+// 		return await response.json();
+// 	}
 
 // function postData(url= '', data ={}) {
 // 	return new Promise(resolve => {
