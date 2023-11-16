@@ -19,10 +19,10 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
     // создаем объект новый
     let data = new FormData(form);
+	console.log([data]);
     // передаем в фукцию fetch данные и получаем результат
     postData('send.php', data).then((data) => {
         // обработка ответа от сервера
-        console.log(data);
         if (data.error == '') {
             alert(data.success);
 				// Очищаем поля формы 
