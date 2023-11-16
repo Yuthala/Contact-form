@@ -25,7 +25,9 @@ form.addEventListener('submit', function (event) {
         console.log(data);
         if (data.error == '') {
             alert(data.success);
-            cleanForm();
+				// Очищаем поля формы 
+				//cleanForm();
+				event.target.reset();
         } else if (data.email !== '') {
             alert(data.email);
         } else {
