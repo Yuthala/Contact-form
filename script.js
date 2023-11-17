@@ -6,9 +6,13 @@ window.addEventListener('DOMContentLoaded', function() {
 async function postData(url= '', data = {}) {
     const response = await fetch(url, {
         method: "POST",
-        body: data
+		headers: {
+			'Content-Type': 'application/json;charset=utf-8'
+		},
+        body: JSON.stringify(data)
     });
-    return await  response.json();
+    //return await response.text();
+	return await response.json();
 }
 
 // отправка
@@ -24,14 +28,14 @@ form.addEventListener('submit', function (event) {
     postData('send.php', data).then((data) => {
         // обработка ответа от сервера
         if (data.error == '') {
-            alert(data.success);
+            console.log(`if no error: ${data.success}`);
 				// Очищаем поля формы 
 				//cleanForm();
 				event.target.reset();
-        } else if (data.email !== '') {
-            alert(data.email);
+        // } else if (data.email !== '') {
+        //     console.log(`if email is not empty ${data.email}`);
         } else {
-            alert(data.error);
+        console.log(`Error text ${data.error}`);
         }
     })
 })
