@@ -6,10 +6,11 @@ window.addEventListener('DOMContentLoaded', function() {
 async function postData(url= '', data = {}) {
     const response = await fetch(url, {
         method: "POST",
-		headers: {
-			'Content-Type': 'application/json;charset=utf-8'
-		},
-        body: JSON.stringify(data)
+		// headers: {
+		// 	'Content-Type': 'application/json;charset=utf-8'
+		// },
+        //body: JSON.stringify(data)
+		body: data
     });
     //return await response.text();
 	return await response.json();
