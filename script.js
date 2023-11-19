@@ -33,10 +33,10 @@ form.addEventListener('submit', function (event) {
 				// Очищаем поля формы 
 				//cleanForm();
 				event.target.reset();
-        // } else if (data.email !== '') {
-        //     console.log(`if email is not empty ${data.email}`);
+        } else if (data.email !== '') {
+        	console.log(`if email is not empty ${data.email}`);
         } else {
-        console.log(`Error text ${data.error}`);
+        	console.log(`Error text ${data.error}`);
         }
     })
 })
