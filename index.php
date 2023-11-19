@@ -3,10 +3,11 @@
 //вынести скрипт js в отлельный файл - done
 //вынести php код в отдельный файл - done
 //сделать чтобы форма очищалась после отправки - done
-//сделать чтобы сообщение об успешной/неуспешной передаче выводилось в span или div 
-//поменять типы инпутов
-//сделать валидацию полей и ограничение знаков для textarea
-//добавить плейсхолдеры
+//сделать чтобы сообщение об успешной/неуспешной передаче выводилось в span или div - done
+//поменять типы инпутов - done
+//сделать ограничение знаков для textarea - done
+//добавить плейсхолдеры - done
+//сделать валидацию полей
 //перенести форму на сайт
 
 
@@ -67,11 +68,11 @@ button {
 		</p>
 		<p>
 			<label for="email">Email</label>
-			<input type="text" name="email" id="email" placeholder="Ваш e-mail" required><span></span>
+			<input type="email" name="email" id="email" placeholder="Ваш e-mail" required><span></span>
 		</p>
 		<p>
 			<label for="body">Сообщение</label>
-			<textarea name="body" cols="30" rows="10" id="body" placeholder="Текст сообщения" required></textarea><span></span>
+			<textarea name="body" cols="30" rows="10" maxlength="250" id="body" placeholder="Текст сообщения" required></textarea><span></span>
 			<div id="result"></div>
 		</p>
 		<p>
