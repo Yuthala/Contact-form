@@ -59,60 +59,28 @@ button {
 	<form action="" method="POST" id="form">
 		<p>
 			<label for="name">Имя</label>
-			<input type="text" name="name" id="name"><span></span>
+			<input type="text" name="name" id="name" placeholder="Ваше имя" required><span></span>
 		</p>
 		<p>
 			<label for="subject">Тема</label>
-			<input type="text" name="subject" id="subject"><span></span>
+			<input type="text" name="subject" id="subject" placeholder="Тема сообщения"><span></span>
 		</p>
 		<p>
 			<label for="email">Email</label>
-			<input type="text" name="email" id="email"><span></span>
+			<input type="text" name="email" id="email" placeholder="Ваш e-mail" required><span></span>
 		</p>
 		<p>
 			<label for="body">Сообщение</label>
-			<textarea name="body" cols="30" rows="10" id="body"></textarea><span></span>
+			<textarea name="body" cols="30" rows="10" id="body" placeholder="Текст сообщения" required></textarea><span></span>
+			<div id="result"></div>
 		</p>
 		<p>
 			<input id="submit" type="submit" name="submit" value="Отправить"><span></span>
 		</p>
+
 	</form>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 	<script src='script.js'></script>
-	<!--<script>
-		$(function() {
-			$('#contact').submit(function() {
-				//валидация полей
-				let errors = false;
-				$(this).find('span').empty();
-
-				$(this).find('input, textarea').each(function() {
-					if($.trim($(this).val() ) == '') {
-						errors = true;
-						$(this).next().text( 'Не заполнено поле ' + $(this).prev().text() );
-					}
-				});
-
-				if(!errors) {
-					let data = $('#contact').serialize();
-					$.ajax ({
-						url: 'index.php',
-						type: 'POST',
-						data: data,
-						success: function(res) {
-
-						},
-						error: function() {
-							alert ('Ошибка!');
-						}
- 					});
-					console.log(`Значение data ${data}`);
-				}
-				return false;
-
-			});
-		});
-	</script>-->
 </body>
 </html>

@@ -27,16 +27,20 @@ form.addEventListener('submit', function (event) {
 	console.log([data]);
     // передаем в фукцию fetch данные и получаем результат
     postData('send.php', data).then((data) => {
+        let result = document.getElementById('result');
         // обработка ответа от сервера
         if (data.error == '') {
-            console.log(`if no error: ${data.success}`);
+            //console.log(`if no error: ${data.success}`);
 				// Очищаем поля формы 
 				//cleanForm();
 				event.target.reset();
-        } else if (data.email !== '') {
-        	console.log(`if email is not empty ${data.email}`);
+                result.style.color = 'green';
+                result.textContent = "Ваше сообщение успешно отправлено";
+        //} else if (data.email !== '') {
+        	//console.log(`if email is not empty ${data.email}`);
         } else {
-        	console.log(`Error text ${data.error}`);
+            result.style.color = 'red';
+            result.textContent = "При отправке форма произошла ошибка. Свяжитесь TG @SugarBay";
         }
     })
 })
