@@ -62,19 +62,19 @@ button {
 	<form action="" method="POST" id="form">
 		<p>
 			<label for="name">Имя</label>
-			<input type="text" name="name" id="name" placeholder="Ваше имя" required><span></span>
+			<input type="text" name="name" id="name" pattern="[А-Яа-яЁё]{3,15}" placeholder="Ваше имя" required><span></span>
 		</p>
 		<p>
 			<label for="subject">Тема</label>
-			<input type="text" name="subject" id="subject" placeholder="Тема сообщения"><span></span>
+			<input type="text" name="subject" id="subject" pattern="[а-яА-ЯёЁa-zA-Z0-9]{3,20}" placeholder="Тема сообщения"><span></span>
 		</p>
 		<p>
 			<label for="email">Email</label>
-			<input type="email" name="email" id="email" placeholder="Ваш e-mail" required><span></span>
+			<input type="email" name="email" id="email" maxlength="30"placeholder="Ваш e-mail" required><span></span>
 		</p>
 		<p>
 			<label for="body">Сообщение</label>
-			<textarea name="body" cols="30" rows="10" maxlength="250" id="body" placeholder="Текст сообщения" required></textarea><span></span>
+			<textarea name="body" cols="30" rows="10" id="body" maxlength="250" placeholder="Текст сообщения" required></textarea><span></span>
 			<div id="result"></div>
 		</p>
 		<p>

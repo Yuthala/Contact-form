@@ -47,12 +47,13 @@ require 'PHPMailer/src/SMTP.php';
 //     strlen($_POST["name"]) < 20 && //меньше 20 символов
 //     !preg_match($pattern, $_POST["name"]))//русские буквы
 //         $name = $_POST['name'];
-// var_dump($name);
+//var_dump($name);
 
-if (!empty($_POST["name"])) $email = $_POST['name'];
+//if (!empty($_POST["name"])) $name = $_POST['name'];
+$name = $_POST['name'];
 if (!empty($_POST["email"])) $email = $_POST['email'];
-if (!empty($_POST["subject"])) $email = $_POST['subject'];
-if (!empty($_POST["text"])) $text = $_POST['text'];
+if (!empty($_POST["subject"])) $subject = $_POST['subject'];
+if (!empty($_POST["body"])) $text = $_POST['body'];
 
 /***   Проверка данных ***/
 // валидация почты
