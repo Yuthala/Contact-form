@@ -13,32 +13,6 @@ require 'PHPMailer/src/SMTP.php';
 /***   Получаем данные из формы отправленные скриптом ***/
 // перед присвоением в переменную, проверяем есть ли данные
 
-
-// if (empty(trim($_POST["name"]))) {
-//     echo "Заполните поле Имя";
-// } elseif (!preg_match($pattern, $_POST["name"])) {
-//     $pattern = '/^[а-яёЁ]+$/iu';
-//     echo "Имя должно содержать только русские буквы";
-// } elseif (strlen($_POST["name"]) < 3 || strlen($_POST["name"]) > 20) {
-//     echo "Длина имени от 3 до 20 символов";
-// } else {
-//     if (!empty($_POST["name"])) $name = $_POST['name'];
-// }
-    
-//     if (strlen($_POST["name"]) < 3) {
-//         echo "Минимум 3 символа";
-//     } elseif (strlen($_POST["name"]) > 20) {
-//         echo "Максимум 20 символов";
-//     } else {
-//         //$pattern = '/^[а-яёЁ]+$/iu';
-//         // if (!preg_match($pattern, $_POST["name"])) {
-//         //     echo "Имя должно содержать только русские буквы";
-//         // }
-//     }
-// } else {
-//     if (!empty($_POST["name"])) $name = $_POST['name'];
-// };
-
 //валидация поля Имя
 // $pattern = '/^[а-яёЁ]+$/iu';
 // if (!empty($_POST["name"]) && //не пусто
@@ -49,8 +23,8 @@ require 'PHPMailer/src/SMTP.php';
 //         $name = $_POST['name'];
 //var_dump($name);
 
-//if (!empty($_POST["name"])) $name = $_POST['name'];
-$name = $_POST['name'];
+if (!empty($_POST["name"])) $name = $_POST['name'];
+//$name = $_POST['name'];
 if (!empty($_POST["email"])) $email = $_POST['email'];
 if (!empty($_POST["subject"])) $subject = $_POST['subject'];
 if (!empty($_POST["body"])) $text = $_POST['body'];

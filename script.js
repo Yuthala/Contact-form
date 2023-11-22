@@ -40,7 +40,7 @@ form.addEventListener('submit', function (event) {
         	//console.log(`if email is not empty ${data.email}`);
         } else {
             result.style.color = 'red';
-            result.textContent = "При отправке форма произошла ошибка. Свяжитесь TG @SugarBay";
+            result.textContent = "При отправке формы произошла ошибка. Свяжитесь TG @SugarBay";
         }
     })
 })

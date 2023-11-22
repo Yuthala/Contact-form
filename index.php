@@ -70,11 +70,11 @@ button {
 		</p>
 		<p>
 			<label for="email">Email</label>
-			<input type="email" name="email" id="email" maxlength="30"placeholder="Ваш e-mail" required><span></span>
+			<input type="email" name="email" id="email" maxlength="30" placeholder="Ваш e-mail" required><span></span>
 		</p>
 		<p>
 			<label for="body">Сообщение</label>
-			<textarea name="body" cols="30" rows="10" id="body" maxlength="250" placeholder="Текст сообщения" required></textarea><span></span>
+			<textarea name="body" cols="30" rows="10" id="body" maxlength="250" pattern="[а-яА-ЯёЁa-zA-Z0-9]{3,250}" placeholder="Текст сообщения" required></textarea><span></span>
 			<div id="result"></div>
 		</p>
 		<p>
@@ -83,7 +83,6 @@ button {
 
 	</form>
 
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 	<script src='script.js'></script>
 </body>
 </html>
