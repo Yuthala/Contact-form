@@ -7,10 +7,11 @@
 //поменять типы инпутов - done
 //сделать ограничение знаков для textarea - done
 //добавить плейсхолдеры - done
-//сделать валидацию полей
-//добавить капчу
+//сделать валидацию полей - done с косяками
+
 //добавить согласие с Политикой конфиденциальности
 //перенести форму на сайт
+//добавить капчу после после переноса на рабочий домен
 
 
 
@@ -50,15 +51,6 @@ button {
 </head>
 <body>
 
-<!-- <div class="form-block">
-    <h1>Форма связи</h1>
-    <form id="form">
-        <input class="clean" type="text" name="name" placeholder="Имя">
-        <input class="clean" type="email" name="email" placeholder="Email *">
-        <textarea class="clean" rows="3" name="text" placeholder="Текст сообщения"></textarea>
-        <button name="send" type="submit">Отправить</button>
-    </form>
-</div> -->
 	<form action="" method="POST" id="form">
 		<p>
 			<label for="name">Имя</label>

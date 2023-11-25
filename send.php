@@ -73,9 +73,7 @@ $mail->addAddress('smtp_assist@mail.ru', 'Form');
 $mail->isHTML(true);
 
 $mail->Subject = $_POST['subject'];
-//$mail->Body = "Имя: {$_POST['username']}<br> Пароль: {$_POST['password']}";
 $mail->Body = "Имя: {$_POST['name']}<br> Email: {$_POST['email']}<br> Тема: {$_POST['subject']}<br> Сообщение: {$_POST['body']}";
-//$mail->AltBody =  "Имя: {$_POST['name']}\r\n Email: {$_POST['email']}\r\n Сообщение: {$_POST['body']}";
 //$mail->SMTPDebug = 1;
 
 $mail->send();
