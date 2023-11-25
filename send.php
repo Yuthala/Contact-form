@@ -24,7 +24,7 @@ require 'PHPMailer/src/SMTP.php';
 //var_dump($name);
 
 if (!empty($_POST["name"])) $name = $_POST['name'];
-//$name = $_POST['name'];
+//var_dump($name);
 if (!empty($_POST["email"])) $email = $_POST['email'];
 if (!empty($_POST["subject"])) $subject = $_POST['subject'];
 if (!empty($_POST["body"])) $text = $_POST['body'];
